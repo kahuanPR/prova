@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro de Tarefas</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        select, input[type="text"], button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+        .btn { background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        .btn:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <h1>Cadastro de Tarefas</h1>
+    <form id="formTarefa">
+        <div class="form-group">
+            <label for="usuario">Usuário:</label>
+            <select id="usuario" name="usuario" required>
+                <option value="">Selecione</option>
+                <!-- Usuários serão populados do banco -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="setor">Nome do Setor:</label>
+            <input type="text" id="setor" name="setor" required>
+        </div>
+        <div class="form-group">
+            <label for="descricao">Descrição da Tarefa:</label>
+            <input type="text" id="descricao" name="descricao" required>
+        </div>
+        <div class="form-group">
+            <label for="prioridade">Prioridade:</label>
+            <select id="prioridade" name="prioridade" required>
+                <option value="Baixa">Baixa</option>
+                <option value="Média">Média</option>
+                <option value="Alta">Alta</option>
+            </select>
+        </div>
+        <button type="submit" class="btn">Cadastrar</button>
+    </form>
+    <script>
+        document.getElementById('formTarefa').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Cadastro concluído com sucesso!');
+        });
+    </script>
+</body>
+</html>

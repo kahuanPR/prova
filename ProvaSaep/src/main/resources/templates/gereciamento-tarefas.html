@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerenciamento de Tarefas</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { display: flex; justify-content: space-between; }
+        .column { width: 30%; border: 1px solid #ccc; padding: 10px; border-radius: 5px; }
+        .task { background-color: #f9f9f9; margin-bottom: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        .task-header { font-weight: bold; margin-bottom: 5px; }
+        .buttons { display: flex; justify-content: space-between; margin-top: 10px; }
+        button { padding: 5px 10px; border: none; border-radius: 3px; cursor: pointer; }
+        .btn-edit { background-color: #4CAF50; color: white; }
+        .btn-delete { background-color: #f44336; color: white; }
+        .btn-update { background-color: #2196F3; color: white; }
+        .menu { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <a href="cadastro_usuarios.html">Cadastro de Usuários</a> | 
+        <a href="cadastro_tarefas.html">Cadastro de Tarefas</a> | 
+        <a href="gerenciamento_tarefas.html">Gerenciamento de Tarefas</a>
+    </div>
+
+    <h1>Gerenciamento de Tarefas</h1>
+    <div class="container">
+        <!-- Coluna A Fazer -->
+        <div class="column">
+            <h3>A Fazer</h3>
+            <div class="task">
+                <div class="task-header">Tarefa 1</div>
+                <p>Setor: Financeiro</p>
+                <p>Prioridade: Alta</p>
+                <p>Usuário: João Silva</p>
+                <p>Status: A Fazer</p>
+                <select>
+                    <option value="A Fazer" selected>A Fazer</option>
+                    <option value="Fazendo">Fazendo</option>
+                    <option value="Pronto">Pronto</option>
+                </select>
+                <div class="buttons">
+                    <button class="btn-update">Atualizar</button>
+                    <button class="btn-edit">Editar</button>
+                    <button class="btn-delete" onclick="confirmDelete()">Excluir</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coluna Fazendo -->
+        <div class="column">
+            <h3>Fazendo</h3>
+            <!-- As tarefas serão carregadas dinamicamente -->
+        </div>
+
+        <!-- Coluna Pronto -->
+        <div class="column">
+            <h3>Pronto</h3>
+            <!-- As tarefas serão carregadas dinamicamente -->
+        </div>
+    </div>
+
+    <script>
+        // Função para confirmar exclusão
+        function confirmDelete() {
+            const confirmacao = confirm("Tem certeza que deseja excluir esta tarefa?");
+            if (confirmacao) {
+                alert("Tarefa excluída com sucesso!");
+                // Aqui será implementada a exclusão no banco de dados
+            }
+        }
+    </script>
+</body>
+</html>
